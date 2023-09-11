@@ -11,7 +11,20 @@ function Jobs() {
         >
           <div className="flex gap-[10px] items-center justify-center">
             <img src={jobs.logo} alt="" />
-            <p>{jobs.position}</p>
+            <div>
+                <div className="flex gap-[10px]">
+                <p className="text-[#619392] font-bold">{jobs.company}</p>
+                {jobs.new && <div>NEW!</div>}
+                {jobs.featured && <div>FEATURED</div>}
+                </div>
+            <p className="text-black font-bold text-[18px]">{jobs.position}</p>
+            <ul className="flex gap-[30px]">
+                <li className="text-[#a5abab]">{jobs.postedAt} </li>
+                <li className="list-disc text-[#a5abab]">{jobs.contract}</li>
+                <li className="list-disc text-[#a5abab]">{jobs.location}</li>
+            </ul>
+            </div>
+            
           </div>
           <div className="flex gap-[10px]">
           {jobs.languages.map((language, index) => (
